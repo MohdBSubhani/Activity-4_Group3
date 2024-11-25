@@ -38,3 +38,27 @@ class Polygon:
         '''the str method is used to create a string representation of an object in polygon class'''
         return f"{self.__name} with sides: {self.__sides}"
 
+    def calculate_circumference(self):
+        '''this function/method returns the sum of sides ie the perimeter of a polygon object'''
+        circumference = 0
+        sides = self.get_sides()
+        for side in sides:
+            circumference += side
+        return circumference
+    
+
+def main():
+    '''this is the main function it creates three objects of polygon class and prints their string representation and their circumference'''
+    triangle = Polygon("Triangle", [15.0, 15.0, 15.0])
+    print(triangle)
+    print('Circumference of triangle:',triangle.calculate_circumference(),'\n')
+    square = Polygon("Square", [13.0, 13.0, 13.0, 13.0])
+    print(square)
+    print('Circumference of square:',square.calculate_circumference(),'\n')
+    hexagon = Polygon("Hexagon", [16.0, 16.0, 16.0, 16.0, 16.0, 16.0])
+    print(hexagon)
+    print('Circumference of hexagon:',hexagon.calculate_circumference(),'\n')
+
+
+if __name__ == "__main__":
+    main()

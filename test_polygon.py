@@ -63,3 +63,10 @@ def test_polygon_str():
     assert str(test_polygon) == "Triangle with sides: [20, 20, 20]" #returns true if the string representation is implemented correct
 
 test_polygon_str()
+
+def test_calculate_circumference():
+    '''This function checks if the method calculate_circumference returns the  proper perimeter of the polygon or not and accepst approx values'''
+    test_polygon = Polygon("Triangle", [20,20,20])
+    assert test_polygon.calculate_circumference() == approx(60.0) #checks if the proper perimeter is returned or not
+
+test_calculate_circumference()
