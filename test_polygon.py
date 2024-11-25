@@ -42,3 +42,24 @@ def testing_set_sides(polygon):
     assert polygon.get_sides() == [10,10,10,10] #returns true if both values are equal
 
 testing_set_sides(QUADRILATERAL)
+
+def test_polygon_equality(polygon_check1,polygon_check2):
+    '''this function takes two parameters both of which are objects of Polygon class and tests the __eq__ method which is used to see if two
+        objects are equal or not'''
+    assert polygon_check1.__eq__(polygon_check2) #checking if polygon1 equals polygon2
+
+test_polygon_equality(POLYGON_NO1,POLYGON_NO2)
+
+def test_polygon_inequality(polygon_check1,polygon_check2):
+    '''this function takes two parameters both of which are objects of Polygon class and tests the __ne__ method which is used to see if two
+        objects are inequal or not'''
+    assert polygon_check1.__ne__(polygon_check2) #checking if polygon1 does not equals polygon2
+
+test_polygon_inequality(QUADRILATERAL,POLYGON_NO1)
+
+def test_polygon_str():
+    '''this function tests the method __str__ it defines an object of class Polygon and checks if its string representation is correctly implemented'''
+    test_polygon = Polygon("Triangle", [20,20,20])
+    assert str(test_polygon) == "Triangle with sides: [20, 20, 20]" #returns true if the string representation is implemented correct
+
+test_polygon_str()
